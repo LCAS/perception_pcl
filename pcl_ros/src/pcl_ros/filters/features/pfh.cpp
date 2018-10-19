@@ -36,7 +36,7 @@
  */
 
 #include <pluginlib/class_list_macros.h>
-#include "pcl_ros/features/pfh.h"
+#include "pcl_ros_c11/features/pfh.h"
 
 void 
 pcl_ros::PFHEstimation::emptyPublish (const PointCloudInConstPtr &cloud)

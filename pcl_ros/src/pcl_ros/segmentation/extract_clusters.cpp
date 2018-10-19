@@ -38,9 +38,9 @@
 #include <pluginlib/class_list_macros.h>
 #include <pcl/io/io.h>
 #include <pcl/PointIndices.h>
-#include "pcl_ros/segmentation/extract_clusters.h"
+#include "pcl_ros_c11/segmentation/extract_clusters.h"
 
-#include <pcl_conversions/pcl_conversions.h>
+#include <pcl_conversions_c11/pcl_conversions.h>
 
 using pcl_conversions::fromPCL;
 using pcl_conversions::moveFromPCL;

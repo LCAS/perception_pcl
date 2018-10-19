@@ -39,9 +39,9 @@
 
 #include <pluginlib/class_list_macros.h>
 #include <pcl/io/io.h>
-#include "pcl_ros/io/concatenate_fields.h"
+#include "pcl_ros_c11/io/concatenate_fields.h"
 
-#include <pcl_conversions/pcl_conversions.h>
+#include <pcl_conversions_c11/pcl_conversions.h>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void

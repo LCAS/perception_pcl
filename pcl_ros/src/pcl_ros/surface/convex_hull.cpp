@@ -37,7 +37,7 @@
 
 #include <pluginlib/class_list_macros.h>
 #include <pcl/common/io.h>
-#include "pcl_ros/surface/convex_hull.h"
+#include "pcl_ros_c11/surface/convex_hull.h"
 #include <geometry_msgs/PolygonStamped.h>
 
 //////////////////////////////////////////////////////////////////////////////////////////////

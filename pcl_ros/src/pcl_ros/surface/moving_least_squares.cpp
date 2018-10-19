@@ -36,7 +36,7 @@
  */
 
 #include <pluginlib/class_list_macros.h>
-#include "pcl_ros/surface/moving_least_squares.h"
+#include "pcl_ros_c11/surface/moving_least_squares.h"
 #include <pcl/io/io.h>
 //////////////////////////////////////////////////////////////////////////////////////////////
 void

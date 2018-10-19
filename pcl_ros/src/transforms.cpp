@@ -37,9 +37,9 @@
 #include <sensor_msgs/PointCloud2.h>
 #include <pcl/common/io.h>
 #include <pcl/point_types.h>
-#include <pcl_conversions/pcl_conversions.h>
-#include "pcl_ros/transforms.h"
-#include "pcl_ros/impl/transforms.hpp"
+#include <pcl_conversions_c11/pcl_conversions.h>
+#include "pcl_ros_c11/transforms.h"
+#include "pcl_ros_c11/impl/transforms.hpp"
 
 namespace pcl_ros
 {

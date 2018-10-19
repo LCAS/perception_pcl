@@ -36,7 +36,7 @@
  */
 
 #include <pluginlib/class_list_macros.h>
-#include "pcl_ros/filters/passthrough.h"
+#include "pcl_ros_c11/filters/passthrough.h"
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 bool

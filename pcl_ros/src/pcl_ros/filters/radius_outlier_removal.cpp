@@ -36,7 +36,7 @@
  */
 
 #include <pluginlib/class_list_macros.h>
-#include "pcl_ros/filters/radius_outlier_removal.h"
+#include "pcl_ros_c11/filters/radius_outlier_removal.h"
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 bool

@@ -36,7 +36,7 @@
  */
 
 #include <pluginlib/class_list_macros.h>
-#include "pcl_ros/filters/voxel_grid.h"
+#include "pcl_ros_c11/filters/voxel_grid.h"
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 bool

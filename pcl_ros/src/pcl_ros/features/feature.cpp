@@ -48,7 +48,7 @@
 //#include "principal_curvatures.cpp"
 //#include "vfh.cpp"
 #include <pcl/io/io.h>
-#include "pcl_ros/features/feature.h"
+#include "pcl_ros_c11/features/feature.h"
 #include <message_filters/null_types.h>
 
 ////////////////////////////////////////////////////////////////////////////////////////////

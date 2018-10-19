@@ -39,7 +39,7 @@ find_package(catkin REQUIRED COMPONENTS
   genmsg
   nodelet
   nodelet_topic_tools
-  pcl_conversions
+  pcl_conversions_c11
   pcl_msgs
   pluginlib
   rosbag
@@ -89,7 +89,7 @@ catkin_package(
     message_filters
     nodelet
     nodelet_topic_tools
-    pcl_conversions
+    pcl_conversions_c11
     pcl_msgs
     rosbag
     roscpp

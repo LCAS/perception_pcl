@@ -36,7 +36,7 @@
  */
 
 #include <pluginlib/class_list_macros.h>
-#include "pcl_ros/features/boundary.h"
+#include "pcl_ros_c11/features/boundary.h"
 
 void
 pcl_ros::BoundaryEstimation::emptyPublish (const PointCloudInConstPtr &cloud)

@@ -36,11 +36,11 @@
  */
 
 #include <pluginlib/class_list_macros.h>
-#include "pcl_ros/transforms.h"
-#include "pcl_ros/segmentation/extract_polygonal_prism_data.h"
+#include "pcl_ros_c11/transforms.h"
+#include "pcl_ros_c11/segmentation/extract_polygonal_prism_data.h"
 #include <pcl/io/io.h>
 
-#include <pcl_conversions/pcl_conversions.h>
+#include <pcl_conversions_c11/pcl_conversions.h>
 
 using pcl_conversions::moveFromPCL;
 using pcl_conversions::moveToPCL;
