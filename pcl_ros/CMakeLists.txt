@@ -81,9 +81,9 @@ generate_dynamic_reconfigure_options(
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES
-    pcl_ros_filters
-    pcl_ros_io
-    pcl_ros_tf
+    pcl_ros_filters_c11
+    pcl_ros_io_c11
+    pcl_ros_tf_c11
   CATKIN_DEPENDS
     dynamic_reconfigure
     message_filters
@@ -103,25 +103,25 @@ catkin_package(
 )
 
 ## Declare the pcl_ros_tf library
-add_library(pcl_ros_tf src/transforms.cpp)
-target_link_libraries(pcl_ros_tf ${Boost_LIBRARIES} ${catkin_LIBRARIES} ${EIGEN3_LIBRARIES} ${PCL_LIBRARIES})
-add_dependencies(pcl_ros_tf ${catkin_EXPORTED_TARGETS})
+add_library(pcl_ros_tf_c11 src/transforms.cpp)
+target_link_libraries(pcl_ros_tf_c11 ${Boost_LIBRARIES} ${catkin_LIBRARIES} ${EIGEN3_LIBRARIES} ${PCL_LIBRARIES})
+add_dependencies(pcl_ros_tf_c11 ${catkin_EXPORTED_TARGETS})
 
 ## Nodelets
 
 ## Declare the pcl_ros_io library
-add_library(pcl_ros_io
+add_library(pcl_ros_io_c11
   src/pcl_ros/io/bag_io.cpp
   src/pcl_ros/io/concatenate_data.cpp
   src/pcl_ros/io/concatenate_fields.cpp
   src/pcl_ros/io/io.cpp
   src/pcl_ros/io/pcd_io.cpp
 )
-target_link_libraries(pcl_ros_io pcl_ros_tf ${Boost_LIBRARIES} ${catkin_LIBRARIES} ${EIGEN3_LIBRARIES} ${PCL_LIBRARIES})
-class_loader_hide_library_symbols(pcl_ros_io)
+target_link_libraries(pcl_ros_io_c11 pcl_ros_tf_c11 ${Boost_LIBRARIES} ${catkin_LIBRARIES} ${EIGEN3_LIBRARIES} ${PCL_LIBRARIES})
+class_loader_hide_library_symbols(pcl_ros_io_c11)
 
 ## Declare the pcl_ros_features library
-add_library(pcl_ros_features
+add_library(pcl_ros_features_c11
   src/pcl_ros/features/feature.cpp
   # Compilation is much faster if we include all the following CPP files in feature.cpp
   src/pcl_ros/features/boundary.cpp
@@ -136,13 +136,13 @@ add_library(pcl_ros_features
   src/pcl_ros/features/principal_curvatures.cpp
   src/pcl_ros/features/vfh.cpp
 )
-target_link_libraries (pcl_ros_features ${Boost_LIBRARIES} ${catkin_LIBRARIES} ${EIGEN3_LIBRARIES} ${PCL_LIBRARIES})
-add_dependencies(pcl_ros_features ${PROJECT_NAME}_gencfg)
-class_loader_hide_library_symbols(pcl_ros_features)
+target_link_libraries (pcl_ros_features_c11 ${Boost_LIBRARIES} ${catkin_LIBRARIES} ${EIGEN3_LIBRARIES} ${PCL_LIBRARIES})
+add_dependencies(pcl_ros_features_c11 ${PROJECT_NAME}_gencfg)
+class_loader_hide_library_symbols(pcl_ros_features_c11)
 
 
 ## Declare the pcl_ros_filters library
-add_library(pcl_ros_filters
+add_library(pcl_ros_filters_c11
   src/pcl_ros/filters/extract_indices.cpp
   src/pcl_ros/filters/filter.cpp
   src/pcl_ros/filters/passthrough.cpp
@@ -152,32 +152,32 @@ add_library(pcl_ros_filters
   src/pcl_ros/filters/voxel_grid.cpp
   src/pcl_ros/filters/crop_box.cpp
 )
-target_link_libraries(pcl_ros_filters pcl_ros_tf ${Boost_LIBRARIES} ${catkin_LIBRARIES} ${EIGEN3_LIBRARIES} ${PCL_LIBRARIES})
-add_dependencies(pcl_ros_filters ${PROJECT_NAME}_gencfg)
-class_loader_hide_library_symbols(pcl_ros_filters)
+target_link_libraries(pcl_ros_filters_c11 pcl_ros_tf_c11 ${Boost_LIBRARIES} ${catkin_LIBRARIES} ${EIGEN3_LIBRARIES} ${PCL_LIBRARIES})
+add_dependencies(pcl_ros_filters_c11 ${PROJECT_NAME}_gencfg)
+class_loader_hide_library_symbols(pcl_ros_filters_c11)
 
 ## Declare the pcl_ros_segmentation library
-add_library (pcl_ros_segmentation
+add_library (pcl_ros_segmentation_c11
   src/pcl_ros/segmentation/extract_clusters.cpp
   src/pcl_ros/segmentation/extract_polygonal_prism_data.cpp
   src/pcl_ros/segmentation/sac_segmentation.cpp
   src/pcl_ros/segmentation/segment_differences.cpp
   src/pcl_ros/segmentation/segmentation.cpp
 )
-target_link_libraries(pcl_ros_segmentation pcl_ros_tf ${Boost_LIBRARIES} ${catkin_LIBRARIES} ${EIGEN3_LIBRARIES} ${PCL_LIBRARIES})
-add_dependencies(pcl_ros_segmentation ${PROJECT_NAME}_gencfg)
-class_loader_hide_library_symbols(pcl_ros_segmentation)
+target_link_libraries(pcl_ros_segmentation_c11 pcl_ros_tf_c11 ${Boost_LIBRARIES} ${catkin_LIBRARIES} ${EIGEN3_LIBRARIES} ${PCL_LIBRARIES})
+add_dependencies(pcl_ros_segmentation_c11 ${PROJECT_NAME}_gencfg)
+class_loader_hide_library_symbols(pcl_ros_segmentation_c11)
 
 ## Declare the pcl_ros_surface library
-add_library (pcl_ros_surface
+add_library (pcl_ros_surface_c11
   src/pcl_ros/surface/surface.cpp
   # Compilation is much faster if we include all the following CPP files in surface.cpp
   src/pcl_ros/surface/convex_hull.cpp
   src/pcl_ros/surface/moving_least_squares.cpp
 )
-target_link_libraries(pcl_ros_surface ${Boost_LIBRARIES} ${catkin_LIBRARIES} ${EIGEN3_LIBRARIES} ${PCL_LIBRARIES})
-add_dependencies(pcl_ros_surface ${PROJECT_NAME}_gencfg)
-class_loader_hide_library_symbols(pcl_ros_surface)
+target_link_libraries(pcl_ros_surface_c11 ${Boost_LIBRARIES} ${catkin_LIBRARIES} ${EIGEN3_LIBRARIES} ${PCL_LIBRARIES})
+add_dependencies(pcl_ros_surface_c11 ${PROJECT_NAME}_gencfg)
+class_loader_hide_library_symbols(pcl_ros_surface_c11)
 
 ## Tools
 
@@ -188,7 +188,7 @@ add_executable(pointcloud_to_pcd tools/pointcloud_to_pcd.cpp)
 target_link_libraries(pointcloud_to_pcd ${Boost_LIBRARIES} ${catkin_LIBRARIES} ${EIGEN3_LIBRARY_DIRS} ${PCL_LIBRARIES})
 
 add_executable(bag_to_pcd tools/bag_to_pcd.cpp)
-target_link_libraries(bag_to_pcd pcl_ros_tf ${Boost_LIBRARIES} ${catkin_LIBRARIES} ${EIGEN3_LIBRARY_DIRS} ${PCL_LIBRARIES})
+target_link_libraries(bag_to_pcd pcl_ros_tf_c11 ${Boost_LIBRARIES} ${catkin_LIBRARIES} ${EIGEN3_LIBRARY_DIRS} ${PCL_LIBRARIES})
 
 add_executable(convert_pcd_to_image tools/convert_pcd_to_image.cpp)
 target_link_libraries(convert_pcd_to_image ${Boost_LIBRARIES} ${catkin_LIBRARIES} ${EIGEN3_LIBRARIES} ${PCL_LIBRARIES})
@@ -225,12 +225,12 @@ install(DIRECTORY include/${PROJECT_NAME}/
 
 install(
   TARGETS
-    pcl_ros_tf
-    pcl_ros_io
-    pcl_ros_features
-    pcl_ros_filters
-    pcl_ros_surface
-    pcl_ros_segmentation
+    pcl_ros_tf_c11
+    pcl_ros_io_c11
+    pcl_ros_features_c11
+    pcl_ros_filters_c11
+    pcl_ros_surface_c11
+    pcl_ros_segmentation_c11
     pcd_to_pointcloud
     pointcloud_to_pcd
     bag_to_pcd
