@@ -1,11 +1,11 @@
 cmake_minimum_required(VERSION 2.8)
-project(pcl_ros)
+project(pcl_ros_c11)
 
 ## Find system dependencies
 find_package(cmake_modules REQUIRED)
 find_package(Boost REQUIRED COMPONENTS system filesystem thread)
 find_package(Eigen3 REQUIRED)
-find_package(pcl_catkin REQUIRED)
+find_package(pcl_catkin_c11 REQUIRED)
 
 if(NOT "${PCL_LIBRARIES}" STREQUAL "")
   # For debian: https://github.com/ros-perception/perception_pcl/issues/139

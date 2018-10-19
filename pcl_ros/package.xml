@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>pcl_ros</name>
+  <name>pcl_ros_c11</name>
   <version>1.4.4</version>
   <description>
 
@@ -13,9 +13,7 @@
   <author>Open Perception</author>
   <author email="julius@kammerl.de">Julius Kammerl</author>
   <author email="william@osrfoundation.org">William Woodall</author>
-  <maintainer email="paul@bovbel.com">Paul Bovbel</maintainer>
-  <maintainer email="bill@neautomation.com">Bill Morris</maintainer>
-  <maintainer email="www.kentaro.wada@gmail.com">Kentaro Wada</maintainer>
+  <maintainer email="marc@hanheide.net">Marc Hanheide</maintainer>
   <license>BSD</license>
   <url type="website">http://ros.org/wiki/perception_pcl</url>
   <url type="bugtracker">https://github.com/ros-perception/perception_pcl/issues</url>
@@ -32,8 +30,8 @@
   <depend>message_filters</depend>
   <depend>nodelet</depend>
   <depend>nodelet_topic_tools</depend>
-  <depend>pcl_catkin</depend>
-  <depend>pcl_conversions</depend>
+  <depend>pcl_catkin_c11</depend>
+  <depend>pcl_conversions_c11</depend>
   <depend>pcl_msgs</depend>
   <depend>pluginlib</depend>
   <depend>rosbag</depend>
