@@ -2,6 +2,11 @@
 Changelog for package perception_pcl
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* changed name and maintainer
+* Contributors: Marc Hanheide
+
 1.4.4 (2018-05-17)
 ------------------
 

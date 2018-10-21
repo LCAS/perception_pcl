@@ -2,6 +2,17 @@
 Changelog for package pcl_ros
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* rpath
+* more renaming of libs
+* renaming
+* changed name and maintainer
+* Merge pull request `#1 <https://github.com/LCAS/perception_pcl/issues/1>`_ from ethz-asl/feature/switch_to_pcl_catkin
+  switched from PCL to pcl_catkin dependency
+* switched from PCL to pcl_catkin dependency
+* Contributors: Marc Hanheide, Marko Panjek, root
+
 1.4.4 (2018-05-17)
 ------------------
 * Use nested foreach for the filtered patterns
