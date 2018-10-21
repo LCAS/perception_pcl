@@ -5,7 +5,17 @@ project(pcl_ros_c11)
 find_package(cmake_modules REQUIRED)
 find_package(Boost REQUIRED COMPONENTS system filesystem thread)
 find_package(Eigen3 REQUIRED)
-find_package(pcl_catkin_c11 REQUIRED)
+
+find_package(pcl_catkin_c11 REQUIRED PATHS /opt/ros/kinetic/pcl_c11)
+find_package(PCL 1.8 REQUIRED PATHS /opt/ros/kinetic/pcl_c11)
+
+SET(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib:/opt/ros/kinetic/pcl_c11")
+
+# add the automatically determined parts of the RPATH
+# which point to directories outside the build tree to the install RPATH
+SET(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
+
+
 
 if(NOT "${PCL_LIBRARIES}" STREQUAL "")
   # For debian: https://github.com/ros-perception/perception_pcl/issues/139
