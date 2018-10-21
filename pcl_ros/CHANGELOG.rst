@@ -2,8 +2,8 @@
 Changelog for package pcl_ros
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.4.5 (2018-10-21)
+------------------
 * rpath
 * more renaming of libs
 * renaming
